@@ -100,7 +100,26 @@ The initial approach relies on easily computable aspects of movies, specifically
 
 However, this method inherently assumes that a higher word count in the plot summary correlates with a more complex narrative. While it effectively captures the volume of information, it may overlook the nuances of storytelling intricacy that extend beyond mere quantitative measures. Conversely, extremely short movies are disproportionately favored and may receive a higher score than long and intricate movies, possibly due to the lack of detailed descriptions and the consequent brevity of their plot summaries.
 
+## Plot Originality
 
+In this section, we dive into the world of originality in an attempt to unravel the thematic relationships between movies released within the same year. By comparing movies based on their topic content, we seek to understand whether the films produced in a given year tend to be original in their themes or conform to certain stereotypes. To achieve this, each movie is represented by a probability distribution over six predefined topics, such as [(3,0.5), (6,0.5)], indicating that the movie encompasses 50% of topic 3 and 50% of topic 6. Our similarity method uses the cosine similarity between these topic vectors of different movies in a pairwise comparison with movies released the same year. Movies with higher average cosine similarity are closer to many other movies meaning they are composed of many different topics, creating a more unique thematical narrative. While films containing just one topic will only be similar to the ones of the same type and therefore have low average cosine similarity. Finally, we compute the average cosine similarity per year to get a grasp on which years have been to most original, or on the other hand, all released movies were sticking to some sort of genre.
 
+![Alt text](assets/originality.png)
 
-￼
+Wow! A clear tendency can be observed from 1980s to the 2000s to create more stereotyp-disrupting movies. This period comprises the 1990s which saw greater attention to multiculturalism as well as an advance on alternative media. However, this trend regresses when we enter the 2000s to 2010s… it would be fascinating to see how that continued to the 2020s.
+
+Finally, let’s have a look at the individual films to get our nominees for the ADA Film Originality Awards 2023. Before this, we want to clarify that movie originality does not directly implicate this movie is either good or bad, but it was a stand-out movie in that year. For instance, on the most original category there is movies of different backgrounds and generally a bit long-winded, while the least original section is filled with 1970's movies about post-apocaliptycal situations caused from some virus or mutant invasion, which looks like it was really a thing back then.
+
+#### The most original (within its year)
+1. The Sea (2000)
+2. They Still Call Me Bruce (1987)
+3. Chocolate (2008)
+4. The Horse Whisperer (1998)
+5. Suzhou River (2000)
+
+#### The least original (within its year)
+1. Bug (1975)
+2. The Hellstrom Chronicle (1971)
+3. Stigma (1972)
+4. Space Amoeba (1970)
+5. Ikarie XB-1 (1963)
