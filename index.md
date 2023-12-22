@@ -129,7 +129,17 @@ As we can see, these topics are quite interpretable!
 
 ### Evolution of importance of topics
 
-After performing LDA, we thus have the important topics, and for each movie values for each of these topics, specifiying how important each topic is in this movie. Now, we can look at how the importance of each topic evolved through time. This gives us an idea of which topics where important when in the movie industry. We hypothesize that the movie industry is a reflection of the current culture climate. We check if this is the case by trying to link the importance of topics in different time periods and their evolution through time, to the current cultural climate and societal events.
+After performing LDA, we thus have the important topics, and for each movie values for each of these topics, specifiying how important each topic is in this movie. Now, we can look at how the importance of each topic evolved through time. This gives us an idea of which topics where important when in the movie industry. We hypothesize that the movie industry is a reflection of the current culture climate. We check if this is the case by trying to link the importance of topics in different time periods and their evolution through time, to the current cultural climate and societal events. 
+
+Specifically we split the dataset into periods of 5 years. We only look at movies from 1950 onwards, as for this makes sure that we have enough data for each time period. Then for each period, we take a weighted average of the topic distributions of the movies. Each topic distribution is weighted by the box office revenue of the movie. This allows us to take into account the popularity of movies. This is an important part as we want to look at the important topics in each time period, and thus popular movies should be more strongly represented in this than less popular ones. In the following plot you can see the result of this calculation.
+
+![](assets/all_topics.png)
+
+Take a look at this plot, there is a lot going on right? Some topics remain quite stable through time, so it is hard to make interesting analyses about them. Specifically, the topic with relevant words house, try, run, kill, come (previously interpreted as the horror topic) as well as the topic with relevant words king, fight, kill, story, return (previously interpreted as the fantasy/adventure topic) seem to remain relatively constant. Therefore we can conclude that they have remained popular topics in movies throughout time. However, things become very interesting when we look at the evolution of the other topics
+
+#### War topic
+![](assets/war_topic.png)
+
 
 
 ## Plot Originality
