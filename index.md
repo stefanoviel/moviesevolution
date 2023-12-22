@@ -108,6 +108,29 @@ In essence, both complexity indices depict a shift towards less intricate narrat
 
 Why did the complexity of movie plots start dwindling around 1970? The decrease in movie plot complexity post-1970 may partially reflect changes in communication patterns influenced by the advent of email and instant messaging during the same period.
 
+## Movie topic evolution
+
+In this section, we will look at how the topics of movies evolved over time. To do this, we have to have some way of defining topics and what topics a movie is about. We could  do this by for example simply looking at the genre of a movie, but this might not be very representative. Instead, we do this in a data-driven way! Specifically, we perform Latent Dirichlet Allocation (LDA) on the whole corpus of movies.
+
+### Latent Dirichlet Allocation
+
+Latent dirichlet allocation is method that is used to extract topics from a collection of text documents. Specifically, we specify the amount of topics to the algortihm and it then determines the right topics and represents them as probability distributions over words. Then, each document is represented as a probability distribution over the found topics. In this way, the method finds a collection of topics that can easily interpreted by the most important (/the most likely) words in each topic. Then for each document, by looking at the computed value for each topic, we can see how present each topic is in that document. 
+
+When we perform LDA with six topics on the whole dataset of movie plot summaries, the method finds the topics below, represented by their highest scoring words. We can further interpret them by looking at movies that had a high score for these topics.
+
+- **Topic 1 kill, police, murder, money, shoot, gang, car, escape** Looking at these words, it seems like this topic represents "gangster"-movies. Movies like "The Killers" and "Gang Related" were among the most highest scoring movies on this topic.
+- **Topic 2: war, kill, soldier, army, force, order, return, american** This topic clearly represents war movies, as most of these words are very war-related. The movie "Taegukgi", which is about the Korean war, is the highest scoring movie for this topic. Also the popular war movie "Saving private ryan", scores very high on this topic.
+- **Topic 3: house, try, run, kill, come, room, night, away** This topic is maybe a bit harder to interpret when only looking at the words. We see words like kill, run, away, night which could indicate that it has a strong horror component. Furthermore, the horror movies Night of the Demons, Paranormal Activity, were the two most highest scoring movies for this topic.
+- **Topic 4: love, father, life, family, friend, mother, day, meet**  These words seem to be about family, friendship, love. It looks like topic mostly represents romantic/family/"feel good" movies. 
+- **Topic 5: team, ship, destroy, world, new, crew, earth, time** These words seem to point towards superhero/science-fiction movies. For example the movies "The Avengers" and "Star Trek" were among the highest scoring movies for this topic.
+- **Topic 6: king, fight, kill, story, return, father, help, village** This topic seems to represent fantasy/adventure movies. The highest scoring movie for this topic is "The Black Cauldron", which is a fantasy/adventure movie.
+  
+As we can see, these topics are quite interpretable! 
+
+### Evolution of importance of topics
+
+After performing LDA, we thus have the important topics, and for each movie values for each of these topics, specifiying how important each topic is in this movie. Now, we can look at how the importance of each topic evolved through time. This gives us an idea of which topics where important when in the movie industry. We hypothesize that the movie industry is a reflection of the current culture climate. We check if this is the case by trying to link the importance of topics in different time periods and their evolution through time, to the current cultural climate and societal events.
+
 
 ## Plot Originality
 
