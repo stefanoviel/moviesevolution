@@ -18,7 +18,7 @@ description: >
 # Base URL of site (i.e. /blog). It should always start with a slash,
 # and never end with a slash. Set it to a blank value if hosting at the
 # root of your server.
-baseurl: "/runtimeterror_ds" # the subpath of your site, e.g. /blog/
+baseurl: "/test_website" # the subpath of your site, e.g. /blog/
 url: https://bencentra.com/centrarium/ # the base hostname & protocol for your site
 cover: "/assets/James-Bond-No-Time-To-Die-OMEGA-Filmplakat.jpg"
 logo: "/assets/logo.png"
