@@ -108,13 +108,13 @@ In essence, both complexity indices depict a shift towards less intricate narrat
 
 Why did the complexity of movie plots start dwindling around 1970? The decrease in movie plot complexity post-1970 may partially reflect changes in communication patterns influenced by the advent of email and instant messaging during the same period.
 
-## Movie topic evolution
+## Movie topic evolution: are movies a reflection of the cultural climate?
 
 In this section, we will look at how the topics of movies evolved over time. To do this, we have to have some way of defining topics and what topics a movie is about. We could  do this by for example simply looking at the genre of a movie, but this might not be very representative. Instead, we do this in a data-driven way! Specifically, we perform Latent Dirichlet Allocation (LDA) on the whole corpus of movies.
 
 ### Latent Dirichlet Allocation
 
-Latent dirichlet allocation is method that is used to extract topics from a collection of text documents. Specifically, we specify the amount of topics to the algortihm and it then determines the right topics and represents them as probability distributions over words. Then, each document is represented as a probability distribution over the found topics. In this way, the method finds a collection of topics that can easily interpreted by the most important (/the most likely) words in each topic. Then for each document, by looking at the computed value for each topic, we can see how present each topic is in that document. 
+Latent Dirichlet Allocation is a method that is used to extract topics from a collection of text documents. More concretely, we specify the amount of topics to the algortihm and it then determines the right topics and represents them as probability distributions over words. Then, each document is represented as a probability distribution over the found topics. In this way, the method finds a collection of topics that can easily be interpreted by the most important (/the most likely) words in each topic. Then for each document, by looking at the computed value for each topic, we can see how relevant it is in the document. 
 
 When we perform LDA with six topics on the whole dataset of movie plot summaries, the method finds the topics below, represented by their highest scoring words. We can further interpret them by looking at movies that had a high score for these topics.
 
@@ -129,9 +129,9 @@ As we can see, these topics are quite interpretable!
 
 ### Evolution of importance of topics
 
-After performing LDA, we thus have the important topics, and for each movie values for each of these topics, specifiying how important each topic is in this movie. Now, we can look at how the importance of each topic evolved through time. This gives us an idea of which topics where important when in the movie industry. We hypothesize that the movie industry is a reflection of the current culture climate. We check if this is the case by trying to link the importance of topics in different time periods and their evolution through time, to the current cultural climate and societal events. 
+After performing LDA, we thus have the representative topics, and for each movie a distribution over these topics, specifiying how important each topic is in this movie. Now, we can look at how the importance of each topic evolved through time. This gives us an idea of which topics were more relevant in the movie industry during different time periods. We hypothesize that the movie industry is a reflection of the current culture climate. We check if this is the case by trying to link the importance of topics in different time periods and their evolution through time, to the current cultural climate and societal events. 
 
-Specifically we split the dataset into periods of 5 years. We only look at movies from 1950 onwards, as for this makes sure that we have enough data for each time period. Then for each period, we take a weighted average of the topic distributions of the movies. Each topic distribution is weighted by the box office revenue of the movie. This allows us to take into account the popularity of movies. This is an important part as we want to look at the important topics in each time period, and thus popular movies should be more strongly represented in this than less popular ones. In the following plot you can see the result of this calculation.
+To achieve so, we split the dataset into periods of 5 years. We only look at movies from 1950 onwards, as this makes sure that we have enough data for each time period. Then for each period, we take a weighted average of the topic distributions of the movies. Each topic distribution is weighted by the box office revenue of the movie. This allows us to take into account the popularity of movies. This is an important part as we want to look at the important topics in each time period, and thus popular movies should be more strongly represented in this than less popular ones. In the following plot you can see the result of this calculation.
 
 ![](assets/all_topics.png)
 
@@ -170,9 +170,9 @@ This for sure is very far fetched, but we see that the crime rate follows a simi
 
 Overall, when we look at the evolutions of the prevelance of topics in movies, it seems like we can link this to the cultural climate and the zeitgeist in these perdiods. This supports the hypothesis that the movie industry is a reflection of the current cultural climate
 
-## Plot Originality
+## Have movies become less original?
 
-In this section, we dive into the world of originality in an attempt to unravel the thematic relationships between movies released within the same year. By comparing movies based on their topic content, we seek to understand whether the films produced in a given year tend to be original in their themes or conform to certain stereotypes. To achieve this, each movie is represented by a probability distribution over six predefined topics, such as [(1,0.5), (4,0.5)], indicating that the movie encompasses 50% of topic 1 and 50% of topic 4. Our similarity method uses the cosine similarity between these topic vectors of different movies in a pairwise comparison with movies released the same year. Movies with higher average cosine similarity are closer to many other movies meaning they are composed of many different topics, creating a more unique thematical narrative. While films containing just one topic will only be similar to the ones of the same type and therefore have low average cosine similarity. Finally, we compute the average cosine similarity per year to get a grasp on which years have been to most original, or on the other hand, all released movies were sticking to some sort of genre.
+In this section, we dive into the world of originality in an attempt to unravel the thematic relationships between movies released within the same year. By comparing movies based on their topic content, we seek to understand whether the films produced in a given year tend to be original in their themes or conform to certain stereotypes. To achieve this, each movie is represented by a probability distribution over six predefined topics obtained from the previously explained LDA, hence each movie is represented with a vector such as [(1,0.5), (4,0.5)], indicating that the movie encompasses 50% of topic 1 and 50% of topic 4. Our similarity method uses the cosine similarity between these topic vectors of different movies in a pairwise comparison with movies released the same year. Movies with higher average cosine similarity are closer to many other movies meaning they are composed of many different topics, creating a more unique thematical narrative. While films containing just one topic will only be similar to the ones of the same type and therefore have low average cosine similarity. Finally, we compute the average cosine similarity per year to get a grasp on which years have been to most original, or on the other hand, all released movies were sticking to some sort of genre.
 
 ![Alt text](assets/originality.png)
 
@@ -217,6 +217,8 @@ On third place, we have "Stigma" in which a doctor moves to a secluded community
 On forth place there is "Space Amoeba", a Japanese science fiction movie featuring a space probe returning to Earth with an extraterrestrial amoeba that takes control of other organisms, turning them into giant monsters. By this small description, one can quickly tell this is the average science fiction film from the 1970s.
 
 Finally, our top 5 of least original movies is "Ikarie XB-1" which narrates the journey of a spacecraft, Ikarie XB-1, as it travels to a mysterious star system, encountering various dangers and mysteries along the way.
+
+And that would be our rankings! Thanks for tunning in to the ADA Film Originality Awards 2023.
 
 ## Conclusion
 
