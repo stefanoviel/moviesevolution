@@ -50,7 +50,7 @@ Now, let’s go back to the original question which we now restrict to budget on
 
 The answer is yes. Our findings revealed that, compared to the past, the budget is a more reliable predictor of box office revenue in recent years. We observed a shift in the significance of budget around the year 2004. Regressing the adjusted box office revenue on the adjusted budget for movies before 2004 leads to an R-squared of 0.24, while for movies after 2004 we get an R-squared of 0.53.
 
-The relation between budget and box office revenue can be seen more clearly in the following plots.
+The relation between budget and box office revenue can be seen more clearly in the following plots.°§
 
 
 ![img](https://lh7-us.googleusercontent.com/PxKLS9WXQ8Id2x0IztRfcbAQkKStVU9VZHO4uBdOTl_3JiahVP2YtiYax2_zgeEal04ZO2B4IT1yE05hgUYORONhiujjFYi0mk6tvILBJL889G9qQqOb_z81fEPYoT_3KBRmKfBGPqY3vB5NBNpeT3Y)
