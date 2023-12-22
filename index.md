@@ -28,7 +28,7 @@ So to finally answer our first question: movies got way longer compared to the e
 
 ## The best movies have already been recorded
 
-Similarly to the previous question we only considered the 25 most-voted movies every year and took the average ratings from IMDB. 
+Similarly to the previous question we only considered the 25 most-voted movies every year and took the average ratings from IMDB.
 
 ![img](https://lh7-us.googleusercontent.com/IzpY5rBej6oCRuiOJLLMBy01ETsEv5Ue34D9ssRAjkJxtBxO8_o792RbAScavz7zyBqSPV9n8myEvHehtL6BInRegSIXro47C3oFncGebE0UsPawlkNwekAfnpQQxuhHlFlnlR7Pm-OKP-7Z2nTYyvs)
 
@@ -74,25 +74,40 @@ Next, we regressed the average rating in the period from one to five years after
 
 ## Unraveling Complexity: The Evolution of Movie Plots
 
-Once upon a time, in the magical world of cinema, storytelling was a tapestry woven with intricate plots, multidimensional characters, and unexpected twists. As the years passed, the evolution of movies took an intriguing turn, leading to a subtle yet noticeable shift in narrative complexity.
+In the dynamic world of cinema, storytelling has traditionally thrived on intricate plots, rich characters, and unexpected turns—from classics like "Citizen Kane" to Spielberg's epics. However, the turn of the millennium brought a shift, notably in franchise filmmaking, simplifying narrative structures for mass appeal.
 
-In the early days of cinema, storytelling was a craft meticulously honed by visionary directors and passionate screenwriters. The plots were rich with layers, inviting audiences to unravel mysteries and explore the depths of human emotions. Classics like "Citizen Kane" and "Casablanca" set the bar high, showcasing storytelling prowess that captivated audiences worldwide.
-
-As the golden age of Hollywood progressed, filmmakers continued to push the boundaries of complexity. The 1960s and 1970s witnessed the rise of auteurs like Stanley Kubrick and Francis Ford Coppola, who brought intricate narratives to life in films like "2001: A Space Odyssey" and "The Godfather." The audience was challenged, provoked, and ultimately rewarded for their intellectual engagement.
-
-The 1980s and 1990s saw the emergence of blockbuster cinema, with directors like Steven Spielberg and George Lucas creating visually stunning epics that still held onto narrative depth. Films like "E.T. the Extra-Terrestrial" and "Star Wars: Episode V - The Empire Strikes Back" managed to blend spectacle with storytelling prowess, maintaining a delicate balance that enthralled audiences.
-
-However, as we entered the new millennium, a subtle shift began to occur. The rise of franchise filmmaking and the focus on high-concept, marketable ideas led to a simplification of narrative structures. Studios increasingly favored formulaic approaches, relying on established tropes and predictable arcs to ensure mass appeal.
-
-Consider the evolution of superhero movies, once celebrated for their intricate character development and moral quandaries. As the genre exploded in popularity, the emphasis shifted from nuanced storytelling to flashy visuals and crowd-pleasing moments. The rise of interconnected cinematic universes furthered this trend, encouraging a more straightforward and accessible approach to storytelling.
-
-In the quest to quantify the elusive essence of complexity in cinematic storytelling, we started focusing on two main aspects of movies, each shedding light on different facets of the narrative landscape. The first approach directs attention to the metadata of movies, introducing a complexity score derived from the ratio between the number of words in a plot summary and the film's runtime in minutes. Simultaneously, the second approach embarks on a linguistic exploration, measuring the lexical complexity.
+This trend, observed in superhero movies, shifted focus from intricate character development to visual spectacle within interconnected universes. To examine and quantify this shift, two approaches emerged: one analyzes movie metadata, deriving a complexity score, while the other explores linguistic complexity. These methodologies aim to uncover the evolving nature of storytelling in cinema.
 
 ## Decoding Cinematic Complexity: At first glance
 
 The initial approach relies on easily computable aspects of movies, specifically, the number of words in the plot summary and the runtime in minutes. By calculating a complexity score as the ratio of plot summary words to runtime in minutes, this method provides a numerical indicator of information density. This ratio serves as a snapshot of the amount of information conveyed per unit of time, enabling a comparative analysis across films of varying lengths.
 
-However, this method inherently assumes that a higher word count in the plot summary correlates with a more complex narrative. While it effectively captures the volume of information, it may overlook the nuances of storytelling intricacy that extend beyond mere quantitative measures. Conversely, extremely short movies are disproportionately favored and may receive a higher score than long and intricate movies, possibly due to the lack of detailed descriptions and the consequent brevity of their plot summaries.
+However, this method inherently assumes that a higher word count in the plot summary correlates with a more complex narrative. While it effectively captures the volume of information, it may overlook the nuances of storytelling intricacy that extend beyond mere quantitative measures. Conversely, extremely short movies are disproportionately favored. They may receive a higher score than long and intricate movies, possibly due to the lack of detailed descriptions and the consequent brevity of their plot summaries.
+
+Let's begin with a straightforward analysis: how have the number of words used in movie plots and their runtimes evolved over the years? We can easily compute the mean value and a 95% confidence interval, grouping by year for both quantities.![](https://lh7-us.googleusercontent.com/bka_-qjJiuwLC2jPmf7v5YUDbCWK_RzIMS-InzclvUUpZYYcHSkrloA-CPs3jK6HNMuyhxNW5Pd-zKQHTcGz8xn2Gbmxsq4WOGjoYocJkaeO6_XvdVBHwGoSggvTFPjX8hGTUctv7BjpSGrQG_hNtAk)
+
+The number of words in plot summaries appears to steadily increase over the years, net of fluctuations, and it seems to approach a plateau around the 1980s. On the contrary, excluding the 1920-30 years, which are characterized by a large confidence interval, the runtime also shows an increase (here we’re taking into consideration all movies available in the dataset). However, it appears to have reached a plateau earlier than the number of words, around the 1960s.￼
+
+Delving deeper into the analysis and computing the length/runtime complexity score, we observe a decrease in the complexity of movies between the 1920s and 1970s. However, after 1980, with the emergence of blockbuster cinema, the complexity remains relatively constant.￼![img](https://lh7-us.googleusercontent.com/hLzCViZSBwrv2Fs8VU7DQVqMf0d3PdSQBFnA7thSuVi1NtB8EQzG2NGMDZwtUvgBhS8-977S2RylSRbpVX8GyoYttGZuJ-IuhhXOjMPaw1hq_S1Oda462-oEzka2a3vOrYo0SfailndiDyzulpE16z8)
+
+
+
+## Lexical Complexity: Will emails and instant messages simplify our language?
+
+Delving into linguistic intricacies, the second approach endeavors to assess complexity through the richness of our lexicon. We can define various complexity scores as a ratio of complex words to the total number of words. In this discussion, we'll refer to lexical richness indices outlined by J. Torruella and R. Capsada in their article "Lexical Statistics and Topological Structures: A Measure of Lexical Richness" (2013). These methods aim to quantify the nuances of language embedded in storytelling.
+
+This approach recognizes that the genuine measure of complexity extends beyond word quantity to encompass the quality of language use. It acknowledges the potential for succinctness in conveying profound ideas and emphasizes the impact of meticulously chosen words in shaping the narrative landscape. The underlying question lingers: as we engage in more emails and instant messages, are we witnessing a potential simplification of our language?
+
+Now, let's break down our analysis step by step. We'll consider two variations of two interesting measures of lexical richness defined by Torruella: the Token-Type ratio (TTR) complexity and the mass complexity index. The TTR complexity is the ratio between the number of the most complex tokens in the text, excluding the 5000 most common words according to the Corpus of Contemporary American English (COCA), over the total number of tokens in the text. The mass complexity, on the other hand, is a second-class index defined in terms of the logarithms of the aforementioned quantities.
+
+￼![](https://lh7-us.googleusercontent.com/C5pMlpIi2ktk_KJL7fXZJcJhjbKvYgJ-wLFr8n0Vc0NycJYYCD15thDPx31cT4EoKHBV4tk91Q3DA5sVzhKZgk7hjhYenAVxFe82GjwtDir5zh2ft1QBe8C8HfmDJaMCnZPCAHyzUIbM1hNRotJLywc)
+
+The trends observed in the complexity indices for these plots exhibit notable distinctions, yet they collectively imply a decrease in complexity from 1970 to the present. Specifically, the Type-Token Ratio (TTR) complexity appears to have remained relatively stable in the initial phases of cinematic history and then initiated a discernible decline since the 1970s. On the other hand, the mass complexity demonstrates an even more pronounced decrease, commencing from the early days of cinema in the 1920s, reaching a plateau between the 1940s and 1970s, and subsequently experiencing a renewed and substantial decrease since the 1970s.
+
+In essence, both complexity indices depict a shift towards less intricate narratives over time, with TTR showing a more gradual decline post-1970 compared to the sharper decrease observed in mass. This overarching pattern suggests a noteworthy simplification in the structure and content of movie plots, highlighting a transformative trend in storytelling conventions from the 1970s onward.
+
+Why did the complexity of movie plots start dwindling around 1970? The decrease in movie plot complexity post-1970 may partially reflect changes in communication patterns influenced by the advent of email and instant messaging during the same period.
+
 
 ## Plot Originality
 
