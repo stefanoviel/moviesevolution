@@ -218,4 +218,6 @@ On forth place there is "Space Amoeba", a Japanese science fiction movie featuri
 
 Finally, our top 5 of least original movies is "Ikarie XB-1" which narrates the journey of a spacecraft, Ikarie XB-1, as it travels to a mysterious star system, encountering various dangers and mysteries along the way.
 
-And that would be our rankings! Thanks for tunning in to the ADA Film Originality Awards 2023.
+# Conclusion
+
+In this blog post, we analyzed different ways in which movies have changed over the years. We were able to answer most of the initial questions quantitatively and systematically. So, next time you’re at the bar debating about the evolution of movies with your friends we’re pretty sure you’ll be able to win the debate. Of course, there are several limitations in our analysis, it would have been appropriate to use the script instead of the plots, and our complexity score, even if thoroughly justified could have been improved in many ways. Despite these limitations, we’re quite satisfied with the hindsight we were able to extract from the data and we hope that the reader learned something useful from our post.
