@@ -2,8 +2,8 @@
 layout: post
 title:  "Frame by Frame: The Kaleidoscopic Evolution of Cinema Over the Decades"
 author: Oriol Pascual Anglès, Stefano Viel, Max Sebrechts, Michele Lupini and Stefano Cubeddu
-cover:  "/assets/background.avif"
-
+cover:  "/assets/background.jpg"
+---
 The evolution of cinema over the years is truly remarkable. From the silent film era of the 1920s to the present day, where we are captivated by awe-inspiring special effects, movies have undergone a transformative journey. But it is not just about what we see and hear while watching movies which has changed. Many other metrics have varied over time such as runtime, budgets, and complexity of movies.
 
 While chatting about the current blockbuster with friends many recurrent ideas come up: “Movies these days? Definitely getting longer. They're stretching out more than ever!”, “Movies these days are just simpler…”, or for the vintage lovers “All the best movies? Yeah, they're done and dusted. The new ones? Not a chance they'll top the classics!”.
