@@ -1,216 +1,102 @@
 ---
 layout: post
-title:  "Once upon a time..."
-author: Melanie Brtan, Yehya El Hassan, Antoine Métivier, Etienne Monnin
+title:  "Frame by Frame: The Kaleidoscopic Evolution of Cinema Over the Decades"
+author: Oriol Pascual Anglès, Stefano Viel, Max Sebrechts, Michele Lupini and Stefano Cubeddu
 cover:  "/assets/background.jpg"
 ---
+The evolution of cinema over the years is truly remarkable. From the silent film era of the 1920s to the present day, where we are captivated by awe-inspiring special effects, movies have undergone a transformative journey. But it is not just about what we see and hear while watching movies which has changed. Many other metrics have varied over time such as runtime, budgets, and complexity of movies.
 
-Movies have the unique ability to take us on an emotional journey and transport us to different worlds. Whether we're laughing at the antics of a comedy, rooting for the hero in an action flick, or shedding a tear at a heart-wrenching drama, the silver screen has the power to move us in ways that few other forms of entertainment can. 
+While chatting about the current blockbuster with friends many recurrent ideas come up: “Movies these days? Definitely getting longer. They're stretching out more than ever!”, “Movies these days are just simpler…”, or for the vintage lovers “All the best movies? Yeah, they're done and dusted. The new ones? Not a chance they'll top the classics!”.
 
-The film industry is a multi-billion dollar business, with millions of people around the globe flocking to theaters each year to be entertained and touched by the magic of movies. Movies have the power to shape and reflect culture and society, and some films become cultural touchstones that leave a lasting impact on the world. No matter what genre you prefer or what kind of story you enjoy, there is a movie out there for everyone to love and cherish.
+In this blog post, we will quantitatively analyze the truthfulness of these and many other claims and see what the data has to say. To achieve that we will use different datasets from sources like [IMDb]([https://developer.imdb.com/non-commercial-datasets/](https://developer.imdb.com/non-commercial-datasets/)) and [CMU Movie Summary Corpus]([https://www.google.com/url?q=http://www.cs.cmu.edu/~ark/personas/&amp;sa=D&amp;source=editors&amp;ust=1702986915157988&amp;usg=AOvVaw31QAT1o9RzjJ_NicsdLmF-](http://www.cs.cmu.edu/~ark/personas/)), scraped data and many others.
 
-![storry telling image](/assets/story_telling.jpeg)
+## Let’s start with an easy one: did movies become longer in recent years?
 
-Have you ever been completely captivated by a movie, hanging on every twist and turn of the plot until the very end? That's the power of a well-crafted narrative. But have you ever stopped to think about the types of stories that tend to capture our attention and hold it until the credits roll? In this blog, we set out to investigate the most popular narratives in the film industry, how profitable they are, and how these storylines evolve over time.
+To answer this question we focused on evaluating the average length of movies by considering only the 25 most-watched films each year. Why prioritize the most-watched? Well, people's perception of the average movie length varies based on what they're viewing. Even if a particular year featured numerous lengthy films that went unnoticed, these wouldn't significantly impact the perceived average length of movies.
 
-To do this, we will examine the movie plots in the CMU Movie Corpus dataset and split them into sentences. We will then perform sentiment analysis on each sentence to construct the various movie arcs and analyze the emotions present in each film. This will allow us to see how these emotions evolve throughout the course of the movie and understand the most prevalent narrative arcs.
+The 25 most popular movies were selected by ranking movies every year by the number of votes on IMDB. We aren’t taking the ratings into account because what we were trying to estimate with this metric is how many people have watched the movie. So a movie can be a perfect 10/10 while only 4 people actually watched it.
 
-Join us as we delve into the world of movie storytelling and uncover the secrets of the most compelling plots. Who knows, maybe we'll even discover the formula for the perfect movie!
+The following plot reports a moving average with windows size 5.
 
-## Let us tell you a little story about data
+![](https://lh7-us.googleusercontent.com/s3_UeHH1KUaGqdW_luSKUtalfYLmnj-cQ0zxaN74v4sMhKcnZfUnjcFM-Qtqg1NJXDd7dePZdTrs3DQHePoKgJU75HkBc8Db0sr5FOKVVn_xm6jvY39c7SNYebWucpahjLaQYEtUDJNgNE7xN1qMwKQ)
 
-The CMU Movie Summary Corpus Dataset consists of 42,306 plot summaries and its meta data from movies, released in 1893 until 2013. It varies from drama and comedy all the way to fantasy and musicals. 
+The plot shows some clear trends:
 
-{% include genres.html %}
-Drama, Comedy, Thriller/Action, Romance, and Horror are the kings and queens of the genre world! No shocker there, right? These categories always come out on top and dominate the charts. They're just too darn popular to ignore! In fact this can be visualized by the following pie chart that presents the distribution of the genres present in at least 5 movies in the top 100 rated movies. 
+* 1930 - 1960: movies’ length continuously increased probably due to the technological development of the movie industry.
+* Between 1960 and 1990, movie lengths saw a slight 10-minute drop on average. While it's hard to pinpoint the exact cause, changes in consumer preferences could be a contributing factor.
+* 1990 - 2010: a steady increase is visible in this time range with average movie length getting a little higher than in the 60s.
 
-{% include pie_distribution.html %}
+So to finally answer our first question: movies got way longer compared to the earliest movies taken into account (1930s). Movies today are also slightly longer than those in the 80s, which might explain why some have the perception that films have gotten longer. This is particularly true with millennials, as they've experienced a consistent upward trend in movie length throughout their lives.
 
-We focused on analyzing four datasets of the genres; drama, comedy, thriller/action, and horror. Horror was chosen over romance because romantic movies often overlap with both drama and comedy in their genre classification. The corresponding dataset we constructed consists of:
+## The best movies have already been recorded
 
-| Genre | Dataset Size |
-| --- | --- |
-| Action | 2476 |
-| Horror | 1273 |
-| Drama | 7511|
-| Comedy | 4602 |
+Similarly to the previous question we only considered the 25 most-voted movies every year and took the average ratings from IMDB. The plot reports a moving average with windows size 5.
 
+![](https://lh7-us.googleusercontent.com/IzpY5rBej6oCRuiOJLLMBy01ETsEv5Ue34D9ssRAjkJxtBxO8_o792RbAScavz7zyBqSPV9n8myEvHehtL6BInRegSIXro47C3oFncGebE0UsPawlkNwekAfnpQQxuhHlFlnlR7Pm-OKP-7Z2nTYyvs)
 
-### Movie arcs
-The emotional story arc of a movie plot refers to the way the emotions of the characters and the audience change over the course of the film. It is often depicted through a character's journey as they experience a range of emotions, including happiness, sadness, anger, fear, and others.
+In this case, the urban myth that movies in the past were better than recent ones seems supported by the data. The best movies were made in the '60s while the worst one's in the ‘80s. One small shortcoming of such analysis is that all these ratings have been done in the last 20 years thus they don’t represent the opinion of people who saw the movie being released.
 
-There are many different variations on the emotional story arc, and the specific emotions that are evoked can vary widely depending on the genre and themes of the film. However, at its core, the emotional story arc is about exploring the emotional experiences of the characters and the way those emotions change and evolve over the course of the story. An American writer Kurt Vonnegut characterized the main story plots into 6 different types: 
+How did the characteristics of a good change from now compared to the past?
 
- * **Rags to Riches** in which the protagonist rises to success 
- * **Riches to Rags** in which the protagonist falls from success
- * **Man in a Hole** in which the protagonist falls and then rises again 
- * **Icarus** in which the protagonist rises and then falls
- * **Cinderella** in which the protagonist rises, falls, and then rises again
- * **Oedipus** in which the protagonist falls, rises, and then falls again
+The initial approach to tackle this question was to divide the movies in groups of five years (e.g. 2000-2005, 2005-2010) and for each group we regressed the box office revenue on all the other features. We were hoping to infer the importance of the coefficients from their absolute values and p-values. Our analysis didn’t yield satisfying results, as the budget was the only coefficient that had values significantly different from zero over the years.  In response, we narrowed our focus to the budget, examining how its impact on box office revenue evolved.
 
-A pretty interresting video showing Kurt Vonnegut discribing the characterizations can be found [here](https://www.youtube.com/watch?v=oP3c1h8v2ZQ&t=1s "here")
+But first, since we’re talking about budget, let’s take a quick detour to look at how budgets changed over the year. In the following plots, both the budget and the box office revenue are adjusted for inflation, the data for this adjustment was taken from the U.S Bureau of Labour and Statistics ([https://www.bls.gov/cpi/data.htm](https://www.bls.gov/cpi/data.htm)).
 
-Accordingly, in our analysis, we construct the movie arcs as follows. Let us consider the following plot 
+As before, we’re only considering the 25 most-voted movies for every year. And it’s quite clear that the movie industry has gotten way bigger. The inflation-adjusted budget had a four-fold increase in the last 30 years, while the revenue doubled.
 
->"<span style="color:red">The film opens in 1991, with the funeral of a World War II veteran</span>. <span style="color:green">The man's daughter Marie delivers the eulogy to a church full of veterans who knew and loved her father, while her mother Ethel Ann is sitting out on the church porch, smoking and nursing a hangover </span>. <span style="color:green"> When Ethel Ann begins acting strangely, only her friend Jack  seems to understand why. It quickly emerges that there is a lot Marie does not know about her mother's past and the true story of her love life </span>. <span style="color:green"> The movie flips to a time when this mother was young, lively, and optimistic</span>. <span style="color:green"> She is in love with a young farmer, Teddy Gordon, who goes off to war with his best friends Jack, Gregory, Smith  and Chuck, but not all of them make it back alive</span>. <span style="color:green"> The plot lines intertwine with the story of a young Ulsterman in Belfast, Jimmy, who finds a ring in the wreckage of a crashed B-17 and is determined to return it to the woman who once owned it</span>. <span style="color:red"> Inadvertently caught up in cross-border troubles, Jimmy flees Belfast, travelling to Michigan to give Ethel the ring. <span style="color:orange"> Ethel reveals a wall covered in souvenirs of Teddy, which Jack and Chuck boarded up for her in 1944</span>. <span style="color:red"> Marie is shocked and furious to learn that her mother loved not Chuck, but Teddy's memory </span>. <span style="color:orange"> Ethel travels to Belfast with Jimmy</span>. <span style="color:orange">She holds the hand of a dying British soldier caught in a car-bomb attack</span>. <span style="color:green"> Quinlan  tells Ethel that he was on the hill when Teddy died, and that Teddy's dying words freed Ethel from her promise to love him forever </span>. <span style="color:green">Joining Ethel in Belfast, Jack admits that he has always loved her </span>. <span style="color:green">They begin a romance. </span>" - <span style = "color:#333">Closing the Ring, 2007.</span>
+![](https://lh7-us.googleusercontent.com/fCvN-uBok_AqsTDabanV31Vw463H0argQwLMiO-J8jd51mMSEudQFPov1mW1_SA1XGcZ0fHniOWu3fzkz3CJohOlO-H2wMHtsE9P6Ew7ZtJwkw9ClzxaBq_27yLdhm-O3opyTBkEtewmpB0PKmUeXik)![](https://lh7-us.googleusercontent.com/SVJBtFGa0Mh5kOKzrWRRJHlu4ZSqMTKNuLTPCf4VPVkTE8m8xbISUs_tF0RfIpnkSpFE3N-Ko7mfwSmBwlhX0P_jrPTLu1XcqdeYns-DqL_KuCdjcfTgfwTtJp5B5Of6XtKPyiuuFCnunPdujGsjvOI)
 
-We do sentiment analysis on each line in the plot. As a result, the above plot has been marked with green meaning positive, orange neutral, and red denoting negative. The sentiment scores are saved in two formats: continuous scores and discrete classifications. The discrete class representation will be utilized to classify the type of movie, as will be detailed later. The resultant emotion arc is formed.
+Now, let’s go back to the original question which we now restrict to budget only: did the influence of budget change over time?
 
-{% include emotional_arc.html %}
+The answer is yes. Our findings revealed that, compared to the past, the budget is a more reliable predictor of box office revenue in recent years. We observed a shift in the significance of budget around the year 2004. Regressing the adjusted box office revenue on the adjusted budget for movies before 2004 leads to an R-squared of 0.24, while for movies after 2004 we get an R-squared of 0.53.
 
-We created emotional arcs for all the movies in the dataset. The following visualization shows the emotional arcs for a randomly choosen movie in every genre.
+The relation between budget and box office revenue can be seen more clearly in the following plots.
 
-{% include emotional_arcs_various.html %}
+![](https://lh7-us.googleusercontent.com/9QvVAbDAC_g4HLflU3Ya0sgCaHDKa-LxtX6n22oHyIv7B5YRncaxWK5pwQr3mNdb6cjF6jTnfMgMcZM1odSmA69RuIZt_2PJt2R01-HdZylZDN9CZTpKmqBWmaIEauw7ZuGCE2AOmVVjPjaOvB9oQ5s)
+![](https://lh7-us.googleusercontent.com/LiNNiC8tVd23y_YBkAMlmWy7e19Pejzljc6Md0ER-NqKwK3udN_0vg5A7MwetDhIQ-awZiHAOoTeZbBILfnEL6GEhQZ3iawTUCKwZOJRXrVe8Iw5xviMtiaKCXS6G0OjnZSUS22-JJLS_LXip-te3w8)
 
-Visualizing the emotional arc of a single movie may not accurately represent the overall trend for a genre. To get a more accurate picture, it can be helpful to calculate the average sentiment scores for all the movies in the genre.
+Here we can see that the linear regression line better fits the data after 2004. This has an important implication: in the last 20 years, the success of a movie (measured by box office revenue) depends much more on its budget. In the plot before 2004 we can see that there were quite a lot of outliers with low budgets and high box office revenue, showing that it was indeed possible to make a very successful movie with little money. On the other hand, in recent years it's rare to make a successful movie with little money.
 
-{% include typical_emotional_arcs_various.html %}
+## What are the characteristics of movies that age well?
 
-Did you see those plots? They are absolutely mesmerizing! I can't stop staring at them. Do you know why? 
+We all know about certain movies that were very popular for a few months after they came out but completely forgotten after one or two years. Conversely, some movies initially went unnoticed by the general public but gained significant popularity several years after their initial publication. We wanted to better understand which characteristics make a movie age well (i.e. become more popular as years go by) and which others make people forget it after a few months.
 
-By closely observing the typical movie arcs, we can see that the typical **Action** movie follows a **"Cinderella"** story arc, while a typical **Drama** movie falls between a **"Man in a Hole"** and **"Cinderella"** story arcs. A typical **Comedy** movie on the otherhand follows a **"Man in a Hole"** and the typical **Horror** movie follows a **"Oedipus"** story arc.
+To evaluate this, we required a metric to gauge how the qualities of movies changed over the years. We utilized the Way Back Machine ([https://web.archive.org/](https://web.archive.org/)) a web archive with periodic snapshots of all the majorly visited web pages on the internet. Luckily for us, it also has an API that enabled us to scrape the IMDB web page of a movie over the years. This allowed us to see how the ratings changed as the movie became older. Specifically, we only scraped the ratings and number of voters after one and five years from the movie’s publication.
 
-The results accurately reflect reality. To demonstrate this, let's compare them to the drama movie "Parasite," released in 2019. "Parasite" follows a poor family who initially lives peacefully but becomes intertwined with a wealthy family. As the movie progresses, increasingly dramatic events unfold, culminating in a murder by a member of the poor family. This marks the most negative point in the movie. The poor family then goes into hiding until the end of the movie, when they are finally free. This can be accurately depicted with the Drama Movie Arc! 
+From the number of voters and the rating from one and five years after publication, we were able to compute the average rating in the one to five-year period.
 
-As humans, we crave happy endings and the results reflect this desire. All four genres, even horror, though less clearly, demonstrate an increase in score at the end of the movie. 
+We decided to consider the average rating in the period between one and five years as an indicator of how well the movie aged. This is reasonable as it represents the opinions of people watching the movie after the initial hype regarding the movie release was gone.
 
-### A Deeper Dive into each Typical Story arc
+The average rating in the range of one to five years is compared to the average after one year in the following histogram.
 
-The story arcs in different genres can vary significantly. To identify the most common arcs within a genre, we used Time series Kmeans clustering and the Tslearn Library with the soft dynamic time wrapping distance metric. After running the clustering algorithm, each movie in the genre is assigned to a cluster. By finding the barycenter of these clusters, we were able to determine the representative story arc for each cluster.
+![](https://lh7-us.googleusercontent.com/WfBx50QQ8P8-WlzVak7lC4xxoM98SB269x_a9fe-cPQRUqXP3C3MKTYiwgD97ph4t35YybChhkyZhtJC7oy7xiUc8WY9f4p0hBfErpfYi-cSvqjP-vsp3hiylPWOc47a8csVMrv060xC4eOW8Z1086E)
 
-The representative story arcs for the 3 different clusters found in the Action genre are:
+Next, we regressed the average rating in the period from one to five years after release on different characteristics of the movies. The R-square obtained from the regression is 0.522, which is acceptable given the complexity of the dependent variable we're trying to fit. The following are some of the conclusion that can be draws from the regression:
 
-{% include Action_clusters.html %}
+* The aging of movies highly depends on the reviews after one year (p=0.000 t=29.706). This means that the aging of a movie depends on the initial opinion that people had of it. A unit point increase in the review of a movie after one year leads to a 0.85 increase in the average rating in the following 4 years.
+* Adult movies age tend also to age better
+* Shorts age worse than the average movie while TV series age better. This logic holds true because TV series have a longer transmission duration. Therefore, within the first five years from the release of the first episode, newer episodes may continue to debut, mirroring the impact of a movie release and thus leading to higher ratings for a longer period of time.
 
+## Unraveling Complexity: The Evolution of Movie Plots
 
-The representative story arcs for the 4 different clusters found in the Drama genre are:
+Once upon a time, in the magical world of cinema, storytelling was a tapestry woven with intricate plots, multidimensional characters, and unexpected twists. As the years passed, the evolution of movies took an intriguing turn, leading to a subtle yet noticeable shift in narrative complexity.
 
-{% include Drama_clusters.html %}
+In the early days of cinema, storytelling was a craft meticulously honed by visionary directors and passionate screenwriters. The plots were rich with layers, inviting audiences to unravel mysteries and explore the depths of human emotions. Classics like "Citizen Kane" and "Casablanca" set the bar high, showcasing storytelling prowess that captivated audiences worldwide.
 
-The representative story arcs for the 3 different clusters found in the Comedy genre are:
+As the golden age of Hollywood progressed, filmmakers continued to push the boundaries of complexity. The 1960s and 1970s witnessed the rise of auteurs like Stanley Kubrick and Francis Ford Coppola, who brought intricate narratives to life in films like "2001: A Space Odyssey" and "The Godfather." The audience was challenged, provoked, and ultimately rewarded for their intellectual engagement.
 
-{% include Comedy_clusters.html %}
+The 1980s and 1990s saw the emergence of blockbuster cinema, with directors like Steven Spielberg and George Lucas creating visually stunning epics that still held onto narrative depth. Films like "E.T. the Extra-Terrestrial" and "Star Wars: Episode V - The Empire Strikes Back" managed to blend spectacle with storytelling prowess, maintaining a delicate balance that enthralled audiences.
 
-The representative story arcs for the 3 different clusters found in the Horror genre are:
+However, as we entered the new millennium, a subtle shift began to occur. The rise of franchise filmmaking and the focus on high-concept, marketable ideas led to a simplification of narrative structures. Studios increasingly favored formulaic approaches, relying on established tropes and predictable arcs to ensure mass appeal.
 
-{% include Horror_clusters.html %}
+Consider the evolution of superhero movies, once celebrated for their intricate character development and moral quandaries. As the genre exploded in popularity, the emphasis shifted from nuanced storytelling to flashy visuals and crowd-pleasing moments. The rise of interconnected cinematic universes furthered this trend, encouraging a more straightforward and accessible approach to storytelling.
 
-By manually examining the representative clusters, we can label each timeseries with the labels provided by Kurt Vonnegut. The clustering process resulted in a clear separation of the datapoints, with no single cluster dominating the majority of the data
- 
- {% include cluster_labels_info.html %}
-  
-We used the tslearn library to cluster the emotional arcs of movies by genre using two different representations of time series data and the Silhouette score to evaluate the quality of the clusters and choose the optimal number of clusters. 
+In the quest to quantify the elusive essence of complexity in cinematic storytelling, we started focusing on two main aspects of movies, each shedding light on different facets of the narrative landscape. The first approach directs attention to the metadata of movies, introducing a complexity score derived from the ratio between the number of words in a plot summary and the film's runtime in minutes. Simultaneously, the second approach embarks on a linguistic exploration, measuring the lexical complexity.
 
-{% include silhoutte.html %}
+## Decoding Cinematic Complexity: At first glance
 
-According to the silhouette graph, the optimal number of clusters for action movies is 3, for drama movies is 4, for comedy movies is 3, and for horror movies is 3. Additionally, using discrete features rather than continuous features results in a higher silhouette score. Therefore, we use the resulting number of clusters and discrete features to perform timeseries clustering.
+The initial approach relies on easily computable aspects of movies, specifically, the number of words in the plot summary and the runtime in minutes. By calculating a complexity score as the ratio of plot summary words to runtime in minutes, this method provides a numerical indicator of information density. This ratio serves as a snapshot of the amount of information conveyed per unit of time, enabling a comparative analysis across films of varying lengths.
 
-You may be wondering which cluster within each genre is the most successful in terms of profitability and IMDB rating. Let's continue uncovering the perfect recipe for a successful movie in each genre. 
+However, this method inherently assumes that a higher word count in the plot summary correlates with a more complex narrative. While it effectively captures the volume of information, it may overlook the nuances of storytelling intricacy that extend beyond mere quantitative measures. Conversely, extremely short movies are disproportionately favored and may receive a higher score than long and intricate movies, possibly due to the lack of detailed descriptions and the consequent brevity of their plot summaries.
 
-### The Emotional Influence of Movies: How Does Sentiment Affect Success?
-To uncover the key ingredients for a successful movie, it's important to consider whether there are higher-level features that can impact a film's success, such as the presence of emotions. What is the impact of non-emotional movies on their success compared to movies that do include emotions? Do positive or negative emotions play a particularly significant role in determining a movie's success?
-  
-To analyze this, we will first classify the movies. A movie can be classified as positive, neutral, or negative if over 50% of the sentences in the movie are assigned one of these sentiment values (positive +1 / neutral 0 /negative -1). We can further categorize these movies as emotional (including both positive and negative movies) or non-emotional (consisting only of neutral movies).
-
-{% include emo_pl.html %}
-
-As shown above, clearly more emotional movies exist in every genre. Whereas the negative movies dominate for all all genres except for Drama. Does this mean, that the demand for movies with negative sentiments is higher than for positive movies? To include the viewer’s ratings, an additional dataset from IMDb was used. So, we can compare the mean rating for emotional and non-emotional movies in every genre:
-
-{% include bars_ratings_emo_nonemo.html %}
-
-As well as for the ratings of positive and negative movies:
-
-{% include bars_ratings_pn.html %}
-  
-It's interesting to see that drama is rated higher than the horror. Some possible reasons for why drama might be more highly rated could include:
-
- * Drama films often explore complex, relatable themes and emotions, which can be highly compelling for many viewers.
- * Many drama films are based on true stories or historical events, which can be highly engaging for viewers who are interested in learning more about the world around them.
-
-On the other hand, there could be a variety of reasons why horror films are not as highly rated as drama films. Some possible reasons could include:
-
-  * Horror films are designed to be scary and unsettling, which can be off-putting for some viewers.
-  * Horror films often feature graphic violence or gore, which can be too much for some people to handle.
-
-#### Is it possible for a film to excel without tugging at our heartstrings?
-We conducted statistical tests to investigate whether the presence of emotions in a movie impacts its success, as measured by its IMDB rating. To compare the success of emotional and non-emotional movies, we conducted a matched study by pairing candidates from each group with similar runtime and absolute emotion scores. We examined the correlation between emotions and ratings for each film genre and obtained p-values to gauge the confidence level of our findings.
-
-Unfortunately, we did not observe any significant effect, as none of the p-values were smaller than or equal to 0.05. Although there are fewer non-emotional movies compared to emotional ones, some non-emotional films have still managed to achieve success. It's possible that this is due to other factors or features besides emotion.
-  
-{% include em_pm.html %}
-
-#### Okay then...! How about: positive or negative themed movies?
-As we can see from the p-values, our analysis has uncovered a significant impact of emotions on movie ratings in the Action and Drama genres! Our findings indicate that negative movies in these genres tend to be rated higher than positive movies.
-
-It is worth noting that our analysis did not reveal a correlation between emotions and ratings in the Horror and Comedy genres. This may be because the sentiment analysis we conducted, which was based on the movie plot descriptions, does not accurately reflect the emotions experienced during the movie itself. For example, the jokes in a comedy movie may not be conveyed in the plot description.
-
-### Let's proceed! ...Let us add the Movie Arcs into our Analysis.
-Movie clusters within the same genre can be evaluated by visualizing their average ratings. This can help us find the most popular and highly rated movies within a genre. Try exploring your favorite genres and see which clusters come out on top.
-
-{% include cluster_ratings.html %}
-
-### Ratings
-  
-The bar plots show that there is no clear favorite among the clusters in the Action and Horror genres. However, in the Drama and Comedy genres, there is a noticeable difference in ratings between the clusters, as indicated by the P-values displayed below. In particular, the *'Man in the Hole'* story arc (represented by cluster 3 in both genres) has the highest ratings in both the *Drama* and *Comedy genres*.
-
-Is it any surprise that we all want to see the main character triumph over their struggles and find happiness in the end? It's what we love!
-
-{% include most_rated_arc.html %}
-
-
-### Revenue
-While ratings give us an idea of a movie's critical reception, revenues provide insight into its financial performance. Based on the data we've gathered on the most common movie arcs in each genre, we want to determine which arc is most likely to predict success. To do this, we have analyzed the box office sales of each arc over time, calculating the confidence level and p-value to determine which arc has the highest sales and whether that result is statistically significant. 
-  
-To evaluate the profitability of the movie arcs, we divided the dataset into four periods based on the number of movies in each period, rather than the length of time. This allowed us to analyze the profitability of the arcs using a consistent sample size, even though the time periods were not of equal length.
-  
-A visualization of the evolution of box office revenue distribution among the various clusters of **Action** movies:
-{% include Action_revenues.html %}
-
-A visualization of the evolution of box office revenue distribution among the various clusters of **Horror** movies:
-{% include Horror_revenues.html %}
-
- A visualization of the evolution of box office revenue distribution among the various clusters of **Drama** movies:
-{% include Drama_revenues.html %}
-
- A visualization of the evolution of box office revenue distribution among the various clusters of **Comedy** movies:
-{% include Comedy_revenues.html %}
-  
-The statistical test's significance value, with the null hypothesis being that all cluster distributions have the same mean, is
-  {% include most_profitable_arc.html %}
- 
-The analysis shows that Box Office revenues have been increasing over time. This suggests that the cinema is earning more revenue across all genres. Additionally, the statistical test found that there are several clusters where the mean values differ significantly. This suggests that the revenues for different genres do not have the same mean value. Specifically, considering a signifinace level of 0.05:
-  
-In the **Action** genre: 
-  * During period 2, the cluster labeled "Cinderella" was the more profitable than the cluster labeled "Man in the Hole". 
-  * In period 3, the cluster labeled "Oedipus + Rags to Riches" competes with the cluster labeled "Cinderella," while the cluster labeled "Man in the Hole" remains much lower in profitability.
-  * In periods 1 and 4, the profitability of the three clusters becomes more similar and there is no significant difference in which cluster is more profitable.
-
-In the **Horror** genre: 
-  * During Period 1 and 4, the profitability of the three clusters becomes more similar and there is no significant difference in which cluster is more profitable. On other hand, in period 2 and 3, the Oepidus movie arc is the least profitable movie arc.
-  
-In the **Drama** genre: 
- * During period 1, the cluster labeled "Rags to Riches" was the least profitable, while the clusters labeled "Man in the Hole" and "Oedipus + Rags to Riches" were competing for the top spot in terms of profitability.
- * During period 2 and period 3,  the profitability of the four clusters becomes more similar and there is no significant difference in which cluster is more profitable.
-  * During period 4, the clusters labeled "Rags to Riches" and "Cinderella" were the least profitable, while the clusters labeled "Man in the Hole" and "Oedipus + Rags to Riches" were competing for the top spot in terms of profitability.
-    
- In the **Comedy** genre: 
-  * During period 3 and 4, the cluster labelled "Man in the hole" was the most profitable among all the other clusters. While in period 2, the profitability of the three clusters becomes more similar and there is no significant difference in which cluster is more profitable.
-
-By comparing the revenue and rating results, we see that the cluster labeled "Man in the Hole" has both higher ratings and higher profitability in both the drama and comedy genres where significant differences were found compared to other clusters. This suggests that this cluster is particularly successful in these genres.
- 
-### Conclusion
-  
-This is truly a remarkable finding! By conducting sentiment analysis on every line of a movie's plot and clustering the story arcs, we were able to uncover valuable insights into the various plots present in the movie industry over a century of data. 
-  
-One key insight we gained is that emotions play a different role in various genres. For example, we found that negative-themed movies tend to have higher IMDB ratings compared to positive-themed movies in the genres of action and drama, while the difference was less significant in comedy and horror. We also discovered that emotional-themed movies are more common than non-emotional movies, but there was no significant difference in ratings between the two. 
-
-Furthemore, the success of different story arcs was also varied, with some clusters achieving much greater fame and success compared to others. The cluster labeled "Man in the Hole" had higher ratings in both comedy and drama, while "Cinderella" was successful in action movies. On the other hand, the cluster labeled "Rags to Riches" had much lower fame and success in the drama genre. The oedipus narrative is the least profitable in the horror category, demonstrating that even in horror films, a happy ending is more financially beneficial. Finally, we observed that box office revenues have been increasing over time, indicating the ongoing success of movies in providing us with joy and entertainment.
-  
-![storry telling image](/assets/fun_meme.jpg){:height="500" width="500"}
-  
-In conclusion, this analysis has demonstrated the power of using data and statistical techniques to uncover trends and patterns in the movie industry. However, it is important to acknowledge the limitations of this approach. One potential weakness is that the plot summary may not capture the richness of the movie script, potentially leading to inaccurate conclusions about the story arc of various movies. Additionally, it is important to remember that hypothesis testing should not be used as a definitive tool for making conclusions, but rather as a preliminary and exploratory tool. Despite these limitations, we believe that this is what makes data science such a fascinating field – the importance of being cautious and skeptical of our findings. Needless to say, ADA rules!  
-  
-#### References
-[1] Hutto, C.J. & Gilbert, E.E. (2014). VADER: A Parsimonious Rule-based Model for Sentiment Analysis of Social Media Text. Eighth International Conference on Weblogs and Social Media (ICWSM-14). Ann Arbor, MI, June 2014.
-
-[2] https://tslearn.readthedocs.io/en/stable/
+**
