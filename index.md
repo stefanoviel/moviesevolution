@@ -102,7 +102,7 @@ However, this method inherently assumes that a higher word count in the plot sum
 
 ## Plot Originality
 
-In this section, we dive into the world of originality in an attempt to unravel the thematic relationships between movies released within the same year. By comparing movies based on their topic content, we seek to understand whether the films produced in a given year tend to be original in their themes or conform to certain stereotypes. To achieve this, each movie is represented by a probability distribution over six predefined topics, such as [(3,0.5), (6,0.5)], indicating that the movie encompasses 50% of topic 3 and 50% of topic 6. Our similarity method uses the cosine similarity between these topic vectors of different movies in a pairwise comparison with movies released the same year. Movies with higher average cosine similarity are closer to many other movies meaning they are composed of many different topics, creating a more unique thematical narrative. While films containing just one topic will only be similar to the ones of the same type and therefore have low average cosine similarity. Finally, we compute the average cosine similarity per year to get a grasp on which years have been to most original, or on the other hand, all released movies were sticking to some sort of genre.
+In this section, we dive into the world of originality in an attempt to unravel the thematic relationships between movies released within the same year. By comparing movies based on their topic content, we seek to understand whether the films produced in a given year tend to be original in their themes or conform to certain stereotypes. To achieve this, each movie is represented by a probability distribution over six predefined topics, such as [(1,0.5), (4,0.5)], indicating that the movie encompasses 50% of topic 1 and 50% of topic 4. Our similarity method uses the cosine similarity between these topic vectors of different movies in a pairwise comparison with movies released the same year. Movies with higher average cosine similarity are closer to many other movies meaning they are composed of many different topics, creating a more unique thematical narrative. While films containing just one topic will only be similar to the ones of the same type and therefore have low average cosine similarity. Finally, we compute the average cosine similarity per year to get a grasp on which years have been to most original, or on the other hand, all released movies were sticking to some sort of genre.
 
 ![Alt text](assets/originality.png)
 
@@ -117,9 +117,33 @@ Finally, let’s have a look at the individual films to get our nominees for the
 4. The Horse Whisperer (1998)
 5. Suzhou River (2000)
 
+Here, the films are very varied and rambling. For instance, the first movie, "The Sea", is a Catalan film in which two young men and a woman who shared the same traumatic childhood experience during the Spanish Civil War are reunited years later at a hospital for tuberculosis treatment. 
+
+However, the second one, "They Still Call Me Bruce", is about a Korean man comes to America to thank the American GI who saved his life, but instead winds up running a struggling karate studio. It surely does not sound as profund as the first one, but here we are computing originality, and who would come with such idea?! 
+
+On third place there is "Chocolate" in which an autistic girl with powerful martial art skills looks to settle her ailing mother's debts by seeking out the ruthless gangs that owe her family money.
+
+On forth place, we have "The Horse Whisperer", and finally some more famous names such as Robert Redford and Scarlett Johansson. In this movie the mother of a severely traumatized daughter enlists the aid of a unique horse trainer to help the girl's equally injured horse.
+
+The most original ranking is closed by "Suzhou River" in which after getting out of prison, small-time crook Mardar stumbles upon a woman who looks exactly like his long-lost lover.
+
+You can tell these are not your average blockbuster movies. These films are composed by intrincate plots mixing sets of different topics and are worth of being in the top 5 of the ADA Film Originality Awards 2023.
+
 #### The least original (within its year)
 1. Bug (1975)
 2. The Hellstrom Chronicle (1971)
 3. Stigma (1972)
 4. Space Amoeba (1970)
 5. Ikarie XB-1 (1963)
+
+On the first place for least original movie, there is "Bug", a science fiction horror film that revolves around the emergence of fire-starting cockroaches that emerge from the earth's crust following an earthquake. Doesn't sound like that much common to me... however lots of apocaliptycal science fiction movies were done in the 1970s.
+
+"The Hellstrom Chronicle" follows in second place. The film presents a fictional scientist's theory that insects could inherit the earth, interspersed with real footage of insect life. Mmm.. so again with the insects and the earth invasion? Weird, or not so much.
+
+On third place, we have "Stigma" in which a doctor moves to a secluded community and soon discovers a deadly virus changing the town's young people. 
+
+On forth place there is "Space Amoeba", a Japanese science fiction movie featuring a space probe returning to Earth with an extraterrestrial amoeba that takes control of other organisms, turning them into giant monsters. By this small description, one can quickly tell this is the average science fiction film from the 1970s.
+
+Finally, our top 5 of least original movies is "Ikarie XB-1" which narrates the journey of a spacecraft, Ikarie XB-1, as it travels to a mysterious star system, encountering various dangers and mysteries along the way.
+
+And that would be our rankings! Thanks for tunning in to the ADA Film Originality Awards 2023.
