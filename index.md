@@ -2,7 +2,7 @@
 layout: post
 title:  "Once upon a time..."
 author: Melanie Brtan, Yehya El Hassan, Antoine Métivier, Etienne Monnin
-cover:  "/assets/logo.jpg"
+cover:  "/assets/background.jpg"
 ---
 
 Movies have the unique ability to take us on an emotional journey and transport us to different worlds. Whether we're laughing at the antics of a comedy, rooting for the hero in an action flick, or shedding a tear at a heart-wrenching drama, the silver screen has the power to move us in ways that few other forms of entertainment can. 
