@@ -159,7 +159,7 @@ Love is in the air…? First thing that jumps into the eye is the big peak aroun
 
 In the importance of the science-fiction/superhero topic, and we can see an upwards trend. This can be attributed to the rising popularity of movies that are adaptations of superhero comic books. But there is more to it, we can see a first small peak on the late 1960s, for instance the famous Stanley Kubrick’s 2001: A Space Odessey was released in 1968. However, the huge peak is found in the 1980s and it does not come as a surprise since many classics were released in that period: Alien, E.T. the Extra-Terrestrial, Star Wars, Star Trek… and the lists follows.
 
-#### Gangster topic.
+#### Gangster topic
 
 ![](assets/gangsta_topic.png)
 The above plot is computed slightly different then the ones above, as this one only contains movies that were released in the US. When we look at this plot, we distinctly see two peaks. One in the period 1970-75 and one around the period 1990-95. Now look at the following figure displaying the homocide rate (a metric for crime) in the US from 1950 onwards.
