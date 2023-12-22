@@ -135,12 +135,28 @@ Specifically we split the dataset into periods of 5 years. We only look at movie
 
 ![](assets/all_topics.png)
 
-Take a look at this plot, there is a lot going on right? Some topics remain quite stable through time, so it is hard to make interesting analyses about them. Specifically, the topic with relevant words house, try, run, kill, come (previously interpreted as the horror topic) as well as the topic with relevant words king, fight, kill, story, return (previously interpreted as the fantasy/adventure topic) seem to remain relatively constant. Therefore we can conclude that they have remained popular topics in movies throughout time. However, things become very interesting when we look at the evolution of the other topics
+Take a look at this plot, there is a lot going on right? Some topics remain quite stable through time, so it is hard to make interesting analyses about them. Specifically, the topic with relevant words house, try, run, kill, come (previously interpreted as the horror topic) as well as the topic with relevant words king, fight, kill, story, return (previously interpreted as the fantasy/adventure topic) seem to remain relatively constant. Therefore we can conclude that they have remained popular topics in movies throughout time. However, things become very interesting when we look at the evolution of the other topics:
+- War, relevant words: war, kill, soldier, army, force.
+- Love, relevant words: love, father, life, family, friend.
+- Science-fiction/Superhero, relevant words: team, ship, destroy, world, new.
 
 #### War topic
+
 ![](assets/war_topic.png)
 
+Looking at the evolution of the topic that contains mostly words that can be linked to war movies, we see that this topic is still quite relevant in the period 1950-1960. This should be not too surprising, as this is the period right after the world had seen two big wars. It is not surprising that war was still an intriguing concept at that time! We see that as the two big wars were longer and longer ago, the war topic also became less and less prevalent in movies. From 1980s on wards the value remains mostly constant, and one can say that nowadays it is no longer cool to make a war movie.
 
+#### Love topic
+
+![](assets/love_topic.png)
+
+Love is in the air…? First thing that jumps into the eye is the big peak around the year 1960. This does not come as a surprise if we know the cultural climate of the sixties! Those times were marked by the hippie movement, which embraced values of love, peace, and camaraderie.
+
+#### Science-fiction/superhero topic
+
+![](assets/scifi_topic.png)
+
+Last reviewed topic is science-fiction/superhero movies, and we can see an upwards trend. This can be attributed to the rising popularity of movies that are adaptations of superhero comic books. But there is more to it, we can see a first small peak on the late 1960s, for instance the famous Stanley Kubrick’s 2001: A Space Odessey was released in 1968. However, the huge peak is found in the 1980s and it does not come as a surprise since many classics were released in that period: Alien, E.T. the Extra-Terrestrial, Star Wars, Star Trek… and the lists follows.
 
 ## Plot Originality
 
