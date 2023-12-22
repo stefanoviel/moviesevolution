@@ -139,12 +139,13 @@ Take a look at this plot, there is a lot going on right? Some topics remain quit
 - War, relevant words: war, kill, soldier, army, force.
 - Love, relevant words: love, father, life, family, friend.
 - Science-fiction/Superhero, relevant words: team, ship, destroy, world, new.
+- Gangster, relevant words: kill, police, murder, money, shoot, gang, car, escape.
 
 #### War topic
 
 ![](assets/war_topic.png)
 
-Looking at the evolution of the topic that contains mostly words that can be linked to war movies, we see that this topic is still quite relevant in the period 1950-1960. This should be not too surprising, as this is the period right after the world had seen two big wars. It is not surprising that war was still an intriguing concept at that time! We see that as the two big wars were longer and longer ago, the war topic also became less and less prevalent in movies. From 1980s on wards the value remains mostly constant, and one can say that nowadays it is no longer cool to make a war movie.
+Looking at the evolution of the topic that contains mostly words that can be linked to war movies, we see that this topic is still quite relevant in the period 1950-1960. This should be not too surprising, as this is the period right after the world had seen two big wars. It is not surprising that war was still an intriguing concept at that time! We see that as the two big wars were longer and longer ago, the war topic also became less and less prevalent in movies. From 1980s onwards the value remains mostly constant, and one can say that nowadays it is perhaps less cool to make a war movie.
 
 #### Love topic
 
@@ -156,7 +157,18 @@ Love is in the air…? First thing that jumps into the eye is the big peak aroun
 
 ![](assets/scifi_topic.png)
 
-Last reviewed topic is science-fiction/superhero movies, and we can see an upwards trend. This can be attributed to the rising popularity of movies that are adaptations of superhero comic books. But there is more to it, we can see a first small peak on the late 1960s, for instance the famous Stanley Kubrick’s 2001: A Space Odessey was released in 1968. However, the huge peak is found in the 1980s and it does not come as a surprise since many classics were released in that period: Alien, E.T. the Extra-Terrestrial, Star Wars, Star Trek… and the lists follows.
+In the importance of the science-fiction/superhero topic, and we can see an upwards trend. This can be attributed to the rising popularity of movies that are adaptations of superhero comic books. But there is more to it, we can see a first small peak on the late 1960s, for instance the famous Stanley Kubrick’s 2001: A Space Odessey was released in 1968. However, the huge peak is found in the 1980s and it does not come as a surprise since many classics were released in that period: Alien, E.T. the Extra-Terrestrial, Star Wars, Star Trek… and the lists follows.
+
+#### Gangster topic.
+
+![](assets/gangsta_topic.png)
+The above plot is computed slightly different then the ones above, as this one only contains movies that were released in the US. When we look at this plot, we distinctly see two peaks. One in the period 1970-75 and one around the period 1990-95. Now look at the following figure displaying the homocide rate (a metric for crime) in the US from 1950 onwards.
+
+![](assets/homicide.jpg)
+
+This for sure is very far fetched, but we see that the crime rate follows a similar pattern, with also peaks in the period 1970-1975 and 1990-95!
+
+Overall, when we look at the evolutions of the prevelance of topics in movies, it seems like we can link this to the cultural climate and the zeitgeist in these perdiods. This supports the hypothesis that the movie industry is a reflection of the current cultural climate
 
 ## Plot Originality
 
