@@ -44,7 +44,12 @@ But first, since we’re talking about budget, let’s take a quick detour to lo
 
 As before, we’re only considering the 25 most-voted movies for every year. And it’s quite clear that the movie industry has gotten way bigger. The inflation-adjusted budget had a four-fold increase in the last 30 years, while the revenue doubled.
 
-![](https://lh7-us.googleusercontent.com/fCvN-uBok_AqsTDabanV31Vw463H0argQwLMiO-J8jd51mMSEudQFPov1mW1_SA1XGcZ0fHniOWu3fzkz3CJohOlO-H2wMHtsE9P6Ew7ZtJwkw9ClzxaBq_27yLdhm-O3opyTBkEtewmpB0PKmUeXik)![](https://lh7-us.googleusercontent.com/SVJBtFGa0Mh5kOKzrWRRJHlu4ZSqMTKNuLTPCf4VPVkTE8m8xbISUs_tF0RfIpnkSpFE3N-Ko7mfwSmBwlhX0P_jrPTLu1XcqdeYns-DqL_KuCdjcfTgfwTtJp5B5Of6XtKPyiuuFCnunPdujGsjvOI)
+
+Solarized dark             |  Solarized Ocean
+:-------------------------:|:-------------------------:
+![](https://lh7-us.googleusercontent.com/fCvN-uBok_AqsTDabanV31Vw463H0argQwLMiO-J8jd51mMSEudQFPov1mW1_SA1XGcZ0fHniOWu3fzkz3CJohOlO-H2wMHtsE9P6Ew7ZtJwkw9ClzxaBq_27yLdhm-O3opyTBkEtewmpB0PKmUeXik)  |  ![](https://lh7-us.googleusercontent.com/SVJBtFGa0Mh5kOKzrWRRJHlu4ZSqMTKNuLTPCf4VPVkTE8m8xbISUs_tF0RfIpnkSpFE3N-Ko7mfwSmBwlhX0P_jrPTLu1XcqdeYns-DqL_KuCdjcfTgfwTtJp5B5Of6XtKPyiuuFCnunPdujGsjvOI)
+
+
 
 Now, let’s go back to the original question which we now restrict to budget only: did the influence of budget change over time?
 
