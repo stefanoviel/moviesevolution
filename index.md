@@ -16,8 +16,6 @@ To answer this question we focused on evaluating the average length of movies by
 
 The 25 most popular movies were selected by ranking movies every year by the number of votes on IMDB. We aren’t taking the ratings into account because what we were trying to estimate with this metric is how many people have watched the movie. So a movie can be a perfect 10/10 while only 4 people actually watched it.
 
-The following plot reports a moving average with windows size 5.
-
 ![](https://lh7-us.googleusercontent.com/s3_UeHH1KUaGqdW_luSKUtalfYLmnj-cQ0zxaN74v4sMhKcnZfUnjcFM-Qtqg1NJXDd7dePZdTrs3DQHePoKgJU75HkBc8Db0sr5FOKVVn_xm6jvY39c7SNYebWucpahjLaQYEtUDJNgNE7xN1qMwKQ)
 
 The plot shows some clear trends:
@@ -30,17 +28,17 @@ So to finally answer our first question: movies got way longer compared to the e
 
 ## The best movies have already been recorded
 
-Similarly to the previous question we only considered the 25 most-voted movies every year and took the average ratings from IMDB. The plot reports a moving average with windows size 5.
+Similarly to the previous question we only considered the 25 most-voted movies every year and took the average ratings from IMDB. 
 
-![](https://lh7-us.googleusercontent.com/IzpY5rBej6oCRuiOJLLMBy01ETsEv5Ue34D9ssRAjkJxtBxO8_o792RbAScavz7zyBqSPV9n8myEvHehtL6BInRegSIXro47C3oFncGebE0UsPawlkNwekAfnpQQxuhHlFlnlR7Pm-OKP-7Z2nTYyvs)
+![img](https://lh7-us.googleusercontent.com/IzpY5rBej6oCRuiOJLLMBy01ETsEv5Ue34D9ssRAjkJxtBxO8_o792RbAScavz7zyBqSPV9n8myEvHehtL6BInRegSIXro47C3oFncGebE0UsPawlkNwekAfnpQQxuhHlFlnlR7Pm-OKP-7Z2nTYyvs)
 
 In this case, the urban myth that movies in the past were better than recent ones seems supported by the data. The best movies were made in the '60s while the worst one's in the ‘80s. One small shortcoming of such analysis is that all these ratings have been done in the last 20 years thus they don’t represent the opinion of people who saw the movie being released.
 
-How did the characteristics of a good change from now compared to the past?
+## How did the characteristics of a good change from now compared to the past?
 
 The initial approach to tackle this question was to divide the movies in groups of five years (e.g. 2000-2005, 2005-2010) and for each group we regressed the box office revenue on all the other features. We were hoping to infer the importance of the coefficients from their absolute values and p-values. Our analysis didn’t yield satisfying results, as the budget was the only coefficient that had values significantly different from zero over the years.  In response, we narrowed our focus to the budget, examining how its impact on box office revenue evolved.
 
-But first, since we’re talking about budget, let’s take a quick detour to look at how budgets changed over the year. In the following plots, both the budget and the box office revenue are adjusted for inflation, the data for this adjustment was taken from the U.S Bureau of Labour and Statistics ([https://www.bls.gov/cpi/data.htm](https://www.bls.gov/cpi/data.htm)).
+But first, since we’re talking about budget, let’s take a quick detour to look at how budgets changed over the year. In the following plots, both the budget and the box office revenue are adjusted for inflation, the data for this adjustment was taken from the [U.S Bureau of Labour and Statistics]([https://www.bls.gov/cpi/data.htm](https://www.bls.gov/cpi/data.htm)).
 
 As before, we’re only considering the 25 most-voted movies for every year. And it’s quite clear that the movie industry has gotten way bigger. The inflation-adjusted budget had a four-fold increase in the last 30 years, while the revenue doubled. Even if the budget grew more slowly the movie industry is massively profitable, in fact only the 25 most popular movies consistently made around half a billion in revenue every year for the last 20 years.
 
@@ -50,11 +48,9 @@ Now, let’s go back to the original question which we now restrict to budget on
 
 The answer is yes. Our findings revealed that, compared to the past, the budget is a more reliable predictor of box office revenue in recent years. We observed a shift in the significance of budget around the year 2004. Regressing the adjusted box office revenue on the adjusted budget for movies before 2004 leads to an R-squared of 0.24, while for movies after 2004 we get an R-squared of 0.53.
 
-The relation between budget and box office revenue can be seen more clearly in the following plots.°§
-
+The relation between budget and box office revenue can be seen more clearly in the following plots.
 
 ![img](https://lh7-us.googleusercontent.com/PxKLS9WXQ8Id2x0IztRfcbAQkKStVU9VZHO4uBdOTl_3JiahVP2YtiYax2_zgeEal04ZO2B4IT1yE05hgUYORONhiujjFYi0mk6tvILBJL889G9qQqOb_z81fEPYoT_3KBRmKfBGPqY3vB5NBNpeT3Y)
-
 
 Here we can see that the linear regression line better fits the data after 2004. This has an important implication: in the last 20 years, the success of a movie (measured by box office revenue) depends much more on its budget. In the plot before 2004 we can see that there were quite a lot of outliers with low budgets and high box office revenue, showing that it was indeed possible to make a very successful movie with little money. On the other hand, in recent years it's rare to make a successful movie with little money.
 
@@ -62,9 +58,7 @@ Here we can see that the linear regression line better fits the data after 2004.
 
 We all know about certain movies that were very popular for a few months after they came out but completely forgotten after one or two years. Conversely, some movies initially went unnoticed by the general public but gained significant popularity several years after their initial publication. We wanted to better understand which characteristics make a movie age well (i.e. become more popular as years go by) and which others make people forget it after a few months.
 
-To evaluate this, we required a metric to gauge how the qualities of movies changed over the years. We utilized the Way Back Machine ([https://web.archive.org/](https://web.archive.org/)) a web archive with periodic snapshots of all the majorly visited web pages on the internet. Luckily for us, it also has an API that enabled us to scrape the IMDB web page of a movie over the years. This allowed us to see how the ratings changed as the movie became older. Specifically, we only scraped the ratings and number of voters after one and five years from the movie’s publication.
-
-From the number of voters and the rating from one and five years after publication, we were able to compute the average rating in the one to five-year period.
+To evaluate this, we required a metric to gauge how the qualities of movies changed over the years. We utilized the [Way Back Machine]([https://web.archive.org/](https://web.archive.org/)) a web archive with periodic snapshots of all the majorly visited web pages on the internet. Luckily for us, it also has an API that enabled us to scrape the IMDB web page of a movie over the years. This allowed us to see how the ratings changed as the movie became older. Specifically, we only scraped the ratings and number of voters after one and five years from the movie’s publication.
 
 We decided to consider the average rating in the period between one and five years as an indicator of how well the movie aged. This is reasonable as it represents the opinions of people watching the movie after the initial hype regarding the movie release was gone.
 
@@ -75,8 +69,8 @@ The average rating in the range of one to five years is compared to the average 
 Next, we regressed the average rating in the period from one to five years after release on different characteristics of the movies. The R-square obtained from the regression is 0.522, which is acceptable given the complexity of the dependent variable we're trying to fit. The following are some of the conclusion that can be draws from the regression:
 
 * The aging of movies highly depends on the reviews after one year (p=0.000 t=29.706). This means that the aging of a movie depends on the initial opinion that people had of it. A unit point increase in the review of a movie after one year leads to a 0.85 increase in the average rating in the following 4 years.
-* Adult movies age tend also to age better
-* Shorts age worse than the average movie while TV series age better. This logic holds true because TV series have a longer transmission duration. Therefore, within the first five years from the release of the first episode, newer episodes may continue to debut, mirroring the impact of a movie release and thus leading to higher ratings for a longer period of time.
+* Adult movies tend to age better compared to the average movies.
+* Shorts movies age worse than the average movie while TV series age better. This logic holds true because TV series have a longer transmission duration. Therefore, within the first five years from the release of the first episode, newer episodes may continue to debut, mirroring the impact of a movie release and thus leading to higher ratings for a longer period of time.
 
 ## Unraveling Complexity: The Evolution of Movie Plots
 
@@ -111,15 +105,16 @@ Wow! A clear tendency can be observed from 1980s to the 2000s to create more ste
 Finally, let’s have a look at the individual films to get our nominees for the ADA Film Originality Awards 2023. Before this, we want to clarify that movie originality does not directly implicate this movie is either good or bad, but it was a stand-out movie in that year. For instance, on the most original category there is movies of different backgrounds and generally a bit long-winded, while the least original section is filled with 1970's movies about post-apocaliptycal situations caused from some virus or mutant invasion, which looks like it was really a thing back then.
 
 #### The most original (within its year)
+
 1. The Sea (2000)
 2. They Still Call Me Bruce (1987)
 3. Chocolate (2008)
 4. The Horse Whisperer (1998)
 5. Suzhou River (2000)
 
-Here, the films are very varied and rambling. For instance, the first movie, "The Sea", is a Catalan film in which two young men and a woman who shared the same traumatic childhood experience during the Spanish Civil War are reunited years later at a hospital for tuberculosis treatment. 
+Here, the films are very varied and rambling. For instance, the first movie, "The Sea", is a Catalan film in which two young men and a woman who shared the same traumatic childhood experience during the Spanish Civil War are reunited years later at a hospital for tuberculosis treatment.
 
-However, the second one, "They Still Call Me Bruce", is about a Korean man comes to America to thank the American GI who saved his life, but instead winds up running a struggling karate studio. It surely does not sound as profund as the first one, but here we are computing originality, and who would come with such idea?! 
+However, the second one, "They Still Call Me Bruce", is about a Korean man comes to America to thank the American GI who saved his life, but instead winds up running a struggling karate studio. It surely does not sound as profund as the first one, but here we are computing originality, and who would come with such idea?!
 
 On third place there is "Chocolate" in which an autistic girl with powerful martial art skills looks to settle her ailing mother's debts by seeking out the ruthless gangs that owe her family money.
 
@@ -130,6 +125,7 @@ The most original ranking is closed by "Suzhou River" in which after getting out
 You can tell these are not your average blockbuster movies. These films are composed by intrincate plots mixing sets of different topics and are worth of being in the top 5 of the ADA Film Originality Awards 2023.
 
 #### The least original (within its year)
+
 1. Bug (1975)
 2. The Hellstrom Chronicle (1971)
 3. Stigma (1972)
@@ -140,7 +136,7 @@ On the first place for least original movie, there is "Bug", a science fiction h
 
 "The Hellstrom Chronicle" follows in second place. The film presents a fictional scientist's theory that insects could inherit the earth, interspersed with real footage of insect life. Mmm.. so again with the insects and the earth invasion? Weird, or not so much.
 
-On third place, we have "Stigma" in which a doctor moves to a secluded community and soon discovers a deadly virus changing the town's young people. 
+On third place, we have "Stigma" in which a doctor moves to a secluded community and soon discovers a deadly virus changing the town's young people.
 
 On forth place there is "Space Amoeba", a Japanese science fiction movie featuring a space probe returning to Earth with an extraterrestrial amoeba that takes control of other organisms, turning them into giant monsters. By this small description, one can quickly tell this is the average science fiction film from the 1970s.
 
