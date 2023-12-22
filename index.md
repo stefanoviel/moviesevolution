@@ -106,7 +106,7 @@ In this section, we dive into the world of originality in an attempt to unravel 
 
 ![Alt text](assets/originality.png)
 
-Wow! A clear tendency can be observed from 1980s to the 2000s to create more stereotyp-disrupting movies. This period comprises the 1990s which saw greater attention to multiculturalism as well as an advance on alternative media. However, this trend regresses when we enter the 2000s to 2010s… it would be fascinating to see how that continued to the 2020s.
+Wow! A clear tendency can be observed from 1980s to the 2000s to create more stereotype-disrupting movies. This period comprises the 1990s which saw greater attention to multiculturalism as well as an advance on alternative media. However, this trend regresses when we enter the 2000s to 2010s… it would be fascinating to see how that continued to the 2020s.
 
 Finally, let’s have a look at the individual films to get our nominees for the ADA Film Originality Awards 2023. Before this, we want to clarify that movie originality does not directly implicate this movie is either good or bad, but it was a stand-out movie in that year. For instance, on the most original category there is movies of different backgrounds and generally a bit long-winded, while the least original section is filled with 1970's movies about post-apocaliptycal situations caused from some virus or mutant invasion, which looks like it was really a thing back then.
 
