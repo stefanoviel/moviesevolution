@@ -8,7 +8,7 @@ The evolution of cinema over the years is truly remarkable. From the silent film
 
 While chatting about the current blockbuster with friends many recurrent ideas come up: “Movies these days? Definitely getting longer. They're stretching out more than ever!”, “Movies these days are just simpler…”, or for the vintage lovers “All the best movies? Yeah, they're done and dusted. The new ones? Not a chance they'll top the classics!”.
 
-In this blog post, we will quantitatively analyze the truthfulness of these and many other claims and see what the data has to say. To achieve that we will use different datasets from sources like [IMDb]([https://developer.imdb.com/non-commercial-datasets/](https://developer.imdb.com/non-commercial-datasets/)) and [CMU Movie Summary Corpus]([https://www.google.com/url?q=http://www.cs.cmu.edu/~ark/personas/&amp;sa=D&amp;source=editors&amp;ust=1702986915157988&amp;usg=AOvVaw31QAT1o9RzjJ_NicsdLmF-](http://www.cs.cmu.edu/~ark/personas/)), scraped data and many others.
+In this blog post, we will quantitatively analyze the truthfulness of these and many other claims and see what the data has to say. To achieve that we will use different datasets from sources like [IMDb]([https://sdeveloper.imdb.com/non-commercial-datasets/](https://developer.imdb.com/non-commercial-datasets/)) and [CMU Movie Summary Corpus]([https://www.google.com/url?q=http://www.cs.cmu.edu/~ark/personas/&sa=D&source=editors&ust=1702986915157988&usg=AOvVaw31QAT1o9RzjJ_NicsdLmF-](http://www.cs.cmu.edu/~ark/personas/)), scraped data and many others.
 
 ## Let’s start with an easy one: did movies become longer in recent years?
 
@@ -42,14 +42,9 @@ The initial approach to tackle this question was to divide the movies in groups 
 
 But first, since we’re talking about budget, let’s take a quick detour to look at how budgets changed over the year. In the following plots, both the budget and the box office revenue are adjusted for inflation, the data for this adjustment was taken from the U.S Bureau of Labour and Statistics ([https://www.bls.gov/cpi/data.htm](https://www.bls.gov/cpi/data.htm)).
 
-As before, we’re only considering the 25 most-voted movies for every year. And it’s quite clear that the movie industry has gotten way bigger. The inflation-adjusted budget had a four-fold increase in the last 30 years, while the revenue doubled.
+As before, we’re only considering the 25 most-voted movies for every year. And it’s quite clear that the movie industry has gotten way bigger. The inflation-adjusted budget had a four-fold increase in the last 30 years, while the revenue doubled. Even if the budget grew more slowly the movie industry is massively profitable, in fact only the 25 most popular movies consistently made around half a billion in revenue every year for the last 20 years.
 
-
-Solarized dark             |  Solarized Ocean
-:-------------------------:|:-------------------------:
-![](https://lh7-us.googleusercontent.com/fCvN-uBok_AqsTDabanV31Vw463H0argQwLMiO-J8jd51mMSEudQFPov1mW1_SA1XGcZ0fHniOWu3fzkz3CJohOlO-H2wMHtsE9P6Ew7ZtJwkw9ClzxaBq_27yLdhm-O3opyTBkEtewmpB0PKmUeXik)  |  ![](https://lh7-us.googleusercontent.com/SVJBtFGa0Mh5kOKzrWRRJHlu4ZSqMTKNuLTPCf4VPVkTE8m8xbISUs_tF0RfIpnkSpFE3N-Ko7mfwSmBwlhX0P_jrPTLu1XcqdeYns-DqL_KuCdjcfTgfwTtJp5B5Of6XtKPyiuuFCnunPdujGsjvOI)
-
-
+![](assets/Screenshot from 2023-12-22 16-43-41.png)
 
 Now, let’s go back to the original question which we now restrict to budget only: did the influence of budget change over time?
 
@@ -57,8 +52,9 @@ The answer is yes. Our findings revealed that, compared to the past, the budget 
 
 The relation between budget and box office revenue can be seen more clearly in the following plots.
 
-![](https://lh7-us.googleusercontent.com/9QvVAbDAC_g4HLflU3Ya0sgCaHDKa-LxtX6n22oHyIv7B5YRncaxWK5pwQr3mNdb6cjF6jTnfMgMcZM1odSmA69RuIZt_2PJt2R01-HdZylZDN9CZTpKmqBWmaIEauw7ZuGCE2AOmVVjPjaOvB9oQ5s)
-![](https://lh7-us.googleusercontent.com/LiNNiC8tVd23y_YBkAMlmWy7e19Pejzljc6Md0ER-NqKwK3udN_0vg5A7MwetDhIQ-awZiHAOoTeZbBILfnEL6GEhQZ3iawTUCKwZOJRXrVe8Iw5xviMtiaKCXS6G0OjnZSUS22-JJLS_LXip-te3w8)
+
+![img](https://lh7-us.googleusercontent.com/PxKLS9WXQ8Id2x0IztRfcbAQkKStVU9VZHO4uBdOTl_3JiahVP2YtiYax2_zgeEal04ZO2B4IT1yE05hgUYORONhiujjFYi0mk6tvILBJL889G9qQqOb_z81fEPYoT_3KBRmKfBGPqY3vB5NBNpeT3Y)
+
 
 Here we can see that the linear regression line better fits the data after 2004. This has an important implication: in the last 20 years, the success of a movie (measured by box office revenue) depends much more on its budget. In the plot before 2004 we can see that there were quite a lot of outliers with low budgets and high box office revenue, showing that it was indeed possible to make a very successful movie with little money. On the other hand, in recent years it's rare to make a successful movie with little money.
 
@@ -104,4 +100,7 @@ The initial approach relies on easily computable aspects of movies, specifically
 
 However, this method inherently assumes that a higher word count in the plot summary correlates with a more complex narrative. While it effectively captures the volume of information, it may overlook the nuances of storytelling intricacy that extend beyond mere quantitative measures. Conversely, extremely short movies are disproportionately favored and may receive a higher score than long and intricate movies, possibly due to the lack of detailed descriptions and the consequent brevity of their plot summaries.
 
-**
+
+
+
+￼
